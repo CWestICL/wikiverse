@@ -9,5 +9,32 @@ main {
   height: 100vh;
 }
 
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin: 1rem 0;
+}
+
+.step > * {
+  margin: 0.5rem 0;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.author:hover {
+  text-decoration: underline;
+}
+
+.tag {
+  text-decoration: underline;
+  margin: 0 0.2rem;
+}
+
+.tag:hover {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

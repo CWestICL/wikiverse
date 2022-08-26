@@ -7,11 +7,13 @@ import apiURL from '../api';
 export const App = () => {
 
 	const [pages, setPages] = useState([]);
+	const [message, setMessage] = useState("All pages:");
 
 	async function fetchPages(){
 		try {
 			const response = await fetch(`${apiURL}/wiki`);
 			const pagesData = await response.json();
+			setMessage("All pages:");
 			setPages(pagesData);
 		} catch (err) {
 			console.log("Oh no an error! ", err)
@@ -26,7 +28,7 @@ export const App = () => {
 		<main>	
       <h1>WikiVerse</h1>
 			<h2>An interesting 📚</h2>
-			<PagesList pages={pages} setPages={setPages} fetchPages={fetchPages} />
+			<PagesList pages={pages} setPages={setPages} fetchPages={fetchPages} message={message} setMessage={setMessage} />
 		</main>
 	)
 }
